@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stu.user.dao.UserDao">
+    <!--{0}占位符-->
+    <select id="adminLogin" parameterType="String" resultType="Map">
+        select * from admin where username=#{0} and password=#{1}
+    </select>
+    <select id="studentLogin1" parameterType="string" resultType="map">
+        select * from user where username=#{0} and password=#{1}
+    </select>
+    <select id="getUsername" parameterType="int" resultType="string">
+        select name from student where id=#{0}
+    </select>
+</mapper>
